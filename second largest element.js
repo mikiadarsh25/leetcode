@@ -1,4 +1,5 @@
 // Brute force approach
+ // sorted = O(NlogN) and loop = O(N) (O(NlogN + N))
 function secondLargestElement(arr) {
     let sortedArr = [...arr].sort((a, b) => b - a);
     let largest = sortedArr[0];
@@ -11,6 +12,7 @@ function secondLargestElement(arr) {
 }
 
 // Better Solution
+// O(N) + O(N) = O(2N)
 function secondLargestElement(arr) {
     let largest = arr[0];
     for (let num of arr) {
@@ -28,7 +30,7 @@ function secondLargestElement(arr) {
 }
 
 // Optimise solution
-
+// O(N)
 function secondLargestElement(arr) {
     let largest = -Infinity;
     let secondLarget = -Infinity;
