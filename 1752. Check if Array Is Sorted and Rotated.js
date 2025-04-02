@@ -27,6 +27,20 @@ var check = function (nums) {
     return true;
 };
 
+// O(N)
+var check = function (num) {
+    if (nums.length <= 1) {
+        return true;
+    }
+    let rotationPoints = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > nums[(i - 1 + nums.length) % nums.length]) {
+            rotationPoints++;
+        }
+    }
+    return rotationPoints <= 1;
+};
+
 
 const nums = [3, 4, 5, 1, 2];
 console.log(check(nums)); // Output: true
